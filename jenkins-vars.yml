@@ -1,0 +1,28 @@
+---
+
+# jenkins variables
+project_name: docker-eden
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_USER = 'eden-emulator'
+  - EXT_REPO = 'Releases'
+  - BUILD_VERSION_ARG = 'EDEN_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-eden'
+  - CONTAINER_NAME = 'eden'
+  - DOCKERHUB_IMAGE = 'linuxserver/eden'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/eden'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/eden'
+  - DIST_IMAGE = 'debian'
+  - MULTIARCH = 'true'
+  - CI = 'true'
+  - CI_WEB = 'true'
+  - CI_PORT = '3001'
+  - CI_SSL = 'true'
+  - CI_DELAY = '120'
+  - CI_DOCKERENV = 'TZ=US/Pacific'
+  - CI_AUTH = 'user:password'
+  - CI_WEBPATH = ''

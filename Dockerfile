@@ -1,0 +1,45 @@
+FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie
+
+# set version label
+ARG BUILD_DATE
+ARG VERSION
+ARG EDEN_VERSION
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="thelamer"
+
+ENV TITLE=Eden \
+    PIXELFLUX_WAYLAND=true    
+
+RUN \
+  echo "**** add icon ****" && \
+  curl -o \
+    /usr/share/selkies/www/icon.png \
+    https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/eden-logo.png && \
+  echo "**** install packages ****" && \
+  apt-get update && \
+  DEBIAN_FRONTEND=noninteractive \
+  echo "**** install eden ****" && \
+  if [ -z ${EDEN_VERSION+x} ]; then \
+    EDEN_VERSION=$(curl -sX GET "https://api.github.com/repos/eden-emulator/Releases/releases/latest" \
+    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+  fi && \
+  curl -o \
+    /tmp/eden.deb -L \
+    "https://github.com/eden-emulator/Releases/releases/download/${EDEN_VERSION}/Eden-Debian-13-${EDEN_VERSION}-amd64.deb" && \
+  apt-get install -y \
+    /tmp/eden.deb && \
+  echo "**** cleanup ****" && \
+  apt-get autoclean && \
+  rm -rf \
+    /config/.cache \
+    /config/.launchpadlib \
+    /var/lib/apt/lists/* \
+    /var/tmp/* \
+    /tmp/*
+
+# add local files
+COPY /root /
+
+# ports and volumes
+EXPOSE 3001
+VOLUME /config
