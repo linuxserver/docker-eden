@@ -9,7 +9,7 @@ ls_branch: master
 repo_vars:
   - EXT_USER = 'eden-emulator'
   - EXT_REPO = 'Releases'
-  - BUILD_VERSION_ARG = 'EDEN_RELEASE'
+  - BUILD_VERSION_ARG = 'EDEN_VERSION'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-eden'
   - CONTAINER_NAME = 'eden'
