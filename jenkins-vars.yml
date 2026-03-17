@@ -2,7 +2,9 @@
 
 # jenkins variables
 project_name: docker-eden
-external_type: github_stable
+external_type: na
+custom_version_command: |
+  curl -sX GET 'https://git.eden-emu.dev/api/v1/repos/eden-emu/eden/releases/latest' | awk '/tag_name/{print $6;exit}' FS='[""]'
 release_type: stable
 release_tag: latest
 ls_branch: master

@@ -612,4 +612,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **17.03.26:** - Ingest releases from self hosted git.
 * **18.02.26:** - Initial Version.
