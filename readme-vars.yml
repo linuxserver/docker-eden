@@ -107,4 +107,5 @@ init_diagram: |
   "eden:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "17.03.26:", desc: "Ingest releases from self hosted git."}
   - {date: "18.02.26:", desc: "Initial Version."}
