@@ -793,8 +793,8 @@ libfmt10                                                                      10
 libfontconfig-dev                                                             2.15.0-2.3                             deb                         
 libfontconfig1                                                                2.15.0-2.3                             deb                         
 libfontenc1                                                                   1:1.1.8-1+b2                           deb                         
-libfreetype-dev                                                               2.13.3+dfsg-1                          deb                         
-libfreetype6                                                                  2.13.3+dfsg-1                          deb                         
+libfreetype-dev                                                               2.13.3+dfsg-1+deb13u1                  deb                         
+libfreetype6                                                                  2.13.3+dfsg-1+deb13u1                  deb                         
 libfribidi0                                                                   1.0.16-1                               deb                         
 libfuse3-4                                                                    3.17.2-3                               deb                         
 libgbm-dev                                                                    25.0.7-2                               deb                         
