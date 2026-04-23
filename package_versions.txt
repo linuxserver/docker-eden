@@ -708,8 +708,8 @@ libcloudproviders0                                                            0.
 libcodec2-1.2                                                                 1.2.0-3                                deb                         
 libcolord2                                                                    1.4.7-3                                deb                         
 libcom-err2                                                                   1.47.2-3+b10                           deb                         
-libcpp-httplib-dev                                                            0.18.7-1                               deb                         
-libcpp-httplib0.18                                                            0.18.7-1                               deb                         
+libcpp-httplib-dev                                                            0.18.7-1+deb13u1                       deb                         
+libcpp-httplib0.18                                                            0.18.7-1+deb13u1                       deb                         
 libcpp-jwt-dev                                                                1.4+ds-5                               deb                         
 libcrypt-dev                                                                  1:4.4.38-1                             deb                         
 libcrypt1                                                                     1:4.4.38-1                             deb                         
