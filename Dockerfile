@@ -74,6 +74,7 @@ RUN \
   fi && \
   git clone https://git.eden-emu.dev/eden-emu/eden.git && \
   cd eden/ && \
+  git checkout -f ${EDEN_VERSION} && \
   cmake -B build -GNinja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None \
