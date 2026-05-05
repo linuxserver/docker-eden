@@ -74,7 +74,6 @@ RUN \
   fi && \
   git clone https://git.eden-emu.dev/eden-emu/eden.git && \
   cd eden/ && \
-  git checkout -f ${EDEN_VERSION} && \
   cmake -B build -GNinja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None \
@@ -114,7 +113,8 @@ ARG EDEN_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thelamer"
 
-ENV TITLE=Eden
+ENV TITLE=Eden \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
