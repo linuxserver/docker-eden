@@ -11,7 +11,6 @@ project_categories: "Games"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
-  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: false
 # container parameters
@@ -35,6 +34,8 @@ app_setup_block: |
   The application can be accessed at:
 
   * https://yourhost:3001/
+
+  **This image only runs in Wayland mode and should be run with a GPU**
 # init diagram
 init_diagram: |
   "eden:latest": {
@@ -107,5 +108,6 @@ init_diagram: |
   "eden:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "05.05.26:", desc: "Rebase to Debian Trixie, build Eden from source, remove arm64 tag."}
   - {date: "17.03.26:", desc: "Ingest releases from self hosted git."}
   - {date: "18.02.26:", desc: "Initial Version."}
