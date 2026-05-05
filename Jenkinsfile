@@ -29,7 +29,7 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/eden'
     PR_DOCKERHUB_IMAGE = 'lspipepr/eden'
     DIST_IMAGE = 'debian'
-    MULTIARCH = 'true'
+    MULTIARCH = 'false'
     CI = 'true'
     CI_WEB = 'true'
     CI_PORT = '3001'
