@@ -5,4 +5,4 @@ if [ ! -f "${HOME}/.config/eden/qt-config.ini" ]; then
   cp /defaults/qt-config.ini "${HOME}/.config/eden/"
 fi
 
-foot -e eden
+eden
