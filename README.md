@@ -645,6 +645,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **30.06.26:** - Optimize build to match PGO v3 builds for better performance.
 * **05.05.26:** - Rebase to Debian Trixie, build Eden from source, remove arm64 tag.
 * **17.03.26:** - Ingest releases from self hosted git.
 * **18.02.26:** - Initial Version.

@@ -10,8 +10,8 @@ RUN \
   apt-get install -y \
     autoconf \
     cmake \
-    g++ \
-    gcc \
+    clang \
+    lld \
     git \
     glslang-tools \
     libasound2t64 \
@@ -75,13 +75,18 @@ RUN \
   git clone https://git.eden-emu.dev/eden-emu/eden.git && \
   cd eden/ && \
   git checkout -f ${EDEN_VERSION} && \
+  curl -L -o /eden.profdata 'https://github.com/Eden-CI/PGO/raw/main/eden.profdata' && \
   cmake -B build -GNinja \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=None \
-    -DCMAKE_C_FLAGS="-march=x86-64-v3 -O2" \
-    -DCMAKE_CXX_FLAGS="-march=x86-64-v3 -O2" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_COMPILER=clang \
+    -DCMAKE_CXX_COMPILER=clang++ \
+    -DCMAKE_C_FLAGS="-fprofile-instr-use=/eden.profdata" \
+    -DCMAKE_CXX_FLAGS="-fprofile-instr-use=/eden.profdata" \
+    -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld" \
+    -DYUZU_BUILD_PRESET=v3 \
     -DUSE_DISCORD_PRESENCE=ON \
-    -DYUZU_ENABLE_LTO=OFF \
+    -DENABLE_LTO=ON \
     -DYUZU_USE_CPM=OFF \
     -DCPM_USE_LOCAL_PACKAGES=ON \
     -DYUZU_USE_BUNDLED_FFMPEG=OFF \
@@ -126,6 +131,8 @@ RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends \
     libavcodec61 \
+    libavfilter-extra10 \
+    libboost-atomic1.83.0 \
     libboost-context1.83.0 \
     libboost-filesystem1.83.0 \
     libcubeb0 \
@@ -134,6 +141,7 @@ RUN \
     liblz4-1 \
     libopus0 \
     libqt6charts6 \
+    libqt6concurrent6 \
     libqt6multimedia6 \
     libqt6webenginewidgets6 \
     libquazip1-qt6-1t64 \

@@ -108,6 +108,7 @@ init_diagram: |
   "eden:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "30.06.26:", desc: "Optimize build to match PGO v3 builds for better performance."}
   - {date: "05.05.26:", desc: "Rebase to Debian Trixie, build Eden from source, remove arm64 tag."}
   - {date: "17.03.26:", desc: "Ingest releases from self hosted git."}
   - {date: "18.02.26:", desc: "Initial Version."}
