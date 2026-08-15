@@ -151,7 +151,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -sX GET 'https://git.eden-emu.dev/api/v1/repos/eden-emu/eden/releases/latest' | awk '/tag_name/{print $6;exit}' FS='[""]'
+            script: ''' curl -sX GET 'https://git.eden-emu.dev/api/v1/repos/eden-emu/eden/releases/latest' | jq -r '.tag_name'
  ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'

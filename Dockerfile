@@ -70,7 +70,7 @@ RUN \
   mkdir /root-out && \
   if [ -z ${EDEN_VERSION+x} ]; then \
     EDEN_VERSION=$(curl -sX GET 'https://git.eden-emu.dev/api/v1/repos/eden-emu/eden/releases/latest' \
-    | awk '/tag_name/{print $6;exit}' FS='[""]'); \
+    | jq -r '.tag_name'); \
   fi && \
   git clone https://git.eden-emu.dev/eden-emu/eden.git && \
   cd eden/ && \
