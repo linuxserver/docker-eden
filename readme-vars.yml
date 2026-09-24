@@ -35,7 +35,7 @@ app_setup_block: |
 
   * https://yourhost:3001/
 
-  **This image only runs in Wayland mode and should be run with a GPU**
+  **This image should be run with a GPU**
 # init diagram
 init_diagram: |
   "eden:latest": {

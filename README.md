@@ -60,7 +60,7 @@ The application can be accessed at:
 
 * https://yourhost:3001/
 
-**This image only runs in Wayland mode and should be run with a GPU**
+**This image should be run with a GPU**
 
 ### Strict reverse proxies
 
